@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat de mensaje en grupo</title>
+</head>
+
+<body>
+  <div class="nav" >Web De Mensajeria <a href="/">salir</a></div> 
+  
+  <div id="caja"> 
+ <section>
+
+
+<div id="accion" ></div>
+
+   
+<ul id="messages" ></ul>
+  
+
+<form id="form" method="POST">
+<select name="canal" id="canal" onchange="cambio()">
+  <option value="">canales</option>
+  <option value="canal-a">Canal A</option>
+  <option value="canal-b">Canal B</option>
+  <option value="canal-c">Canal C</option>
+  <option value="canal-d">Canal D</option>
+</select>
+
+<label for="username">nombre</label>
+<input id="username" name="username"   placeholder="username" required/>
+<label for="input">mensaje</label>
+<input id="input" name="input" autocomplete="off" placeholder="Mensaje" required/>
+<button >Send</button>
+</form>
+</section>
+
+</div>
+
+
+   
+
+  <script src="/socket.io/socket.io.js"></script>
+  
+  <script src ="demo.js"></script>
+
+</body>
+</html>
