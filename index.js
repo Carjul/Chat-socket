@@ -45,11 +45,8 @@ io.on('connection', (socket) => {
   socket.on('escribiendo', (data)=>{socket.broadcast.in(channel).emit('escribiendo', data);});
   
   socket.on('chat message', async (data) => {
-    var msg =  new mensaje(data)
-    await msg.save() 
-    var datos = await mensaje.find()
-    
-    io.in(channel).emit('chat message', datos);
+  
+    io.in(channel).emit('chat message', data);
   
   });
 
