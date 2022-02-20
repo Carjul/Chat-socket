@@ -2,7 +2,7 @@
 const express = require('express');
 const http = require('http');
 const {Server}  = require("socket.io");
-const mensaje = require('./models/mensajes')
+
 //guardando los frameworks en constantes.
 const app = express();
 const server = http.createServer(app);
@@ -44,7 +44,7 @@ io.on('connection', (socket) => {
   })
   socket.on('escribiendo', (data)=>{socket.broadcast.in(channel).emit('escribiendo', data);});
   
-  socket.on('chat message', async (data) => {
+  socket.on('chat message',(data) => {
   
     io.in(channel).emit('chat message', data);
   

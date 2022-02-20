@@ -36,14 +36,12 @@ socket.emit('chat message', {
 
 socket.on('chat message', function(data) {
 
-for (let i = 0; i <data.length; i++) {
-
   var item = document.createElement('div');
-  item.innerHTML= '<p><strong>'+data[i].usuario +'</strong>:  '+ data[i].mensaje + '</p>'
+  item.innerHTML= '<p><strong>'+data.usuario +'</strong>:  '+ data.mensaje + '</p>'
   messages.appendChild(item);
   window.scrollTo(0, document.body.scrollHeight);
 
-}
+
 
 
 });
